@@ -1,0 +1,52 @@
+:root{
+    --navyblue: #250C77;    
+    --white: white;
+    --orange: #ED642B;
+    --margin-global:35px;
+    --font-brand-header: 30px;
+    --font-navitem-header:21px;
+}
+.font-orange{
+    color:var(--orange);
+}
+body{
+    margin: 0;
+}
+*{
+    font-family: 'Jaldi', sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navyblue);
+    color: var(--white);
+    padding: 10px;
+    margin-left: var(--margin-global);
+    margin-right: var(--margin-global);
+}
+
+.navbar-brand {
+    font-size: var(--font-brand-header);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-right: 15px;
+    font-size: var( --font-navitem-header);
+    padding:10px;
+    font-weight: 100;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+}
