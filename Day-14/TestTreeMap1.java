@@ -26,13 +26,13 @@ class TestTreeMap1
             System.out.println(em.getKey()+" -> "+em.getValue());
         }
 
-        Iterator<Iterator> itr = tm.keySet().iterator();
+        // Iterator<Iterator> itr = tm.keySet().iterator();
 
-        while(itr.hasNext())
-        {
-            int key = itr.next();
-            System.out.println(key+" -> "+tm.get(key));
-        }
+        // while(itr.hasNext())
+        // {
+        //     int key = itr.next();
+        //     System.out.println(key+" -> "+tm.get(key));
+        // }
         
     }
 }
