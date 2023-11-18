@@ -1,0 +1,5 @@
+<div>
+    <input type="text" [(ngModel)]="parentMsg"  />
+    <h1>Msg From Child Components : {{childMessage}}</h1>
+</div>
+<app-child-component [msg]="parentMsg" (sentEventEmit)="receiveEventEmit($event)"></app-child-component>

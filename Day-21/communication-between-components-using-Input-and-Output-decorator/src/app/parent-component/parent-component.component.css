@@ -1,0 +1,12 @@
+div{
+    background-color: aqua;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    padding: 30px;
+    margin: auto;
+}
+div > input{
+    padding: 10px;
+    width: 30%;
+    background: opacity 0.5;
+}

@@ -1,0 +1,7 @@
+<div class="container">
+    <div *ngFor="let fruit of fruits">
+        <div *ngIf="selectedElement == '' || fruit.property == selectedElement">
+            <div class="items" (click)="updateElement(fruit.name)">{{fruit.name}}</div>
+        </div>
+    </div>
+</div>
