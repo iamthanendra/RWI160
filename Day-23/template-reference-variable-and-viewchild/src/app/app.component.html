@@ -1,0 +1,21 @@
+<input type="text" #myInput ngModel />
+<button [disabled]="myInput.value.length == 0" (click)="changeValue(myInput)">change value</button>
+{{inputValue}} <br>
+<small><i>Passing Reference Variable as arguments</i></small>
+
+<hr>
+
+<input type="text" #myBox ngModel />
+<button [disabled]="myBox.value.length == 0" (click)="changeValue1()">change value</button>
+{{inputValue}} <br>
+<small><i>Note passing Reference Variable as arguments instead we using @Viewchild</i></small>
+
+<hr>
+<button (click)="changeChildValue()">changeChildValue</button><br> <br>
+
+<button (click)="callChildMethod()">callChildMethod</button><br> <br>
+<app-child></app-child><br> <br>
+<small><i>Manipulation Child Component DOM using Reference Variable and @Viewchild</i></small>
+
+<hr>
+<app-analyze-word></app-analyze-word>
