@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+        <button (click)="selectedElements('color')">Color</button>
+        <button (click)="selectedElements('fruit')">Fruit</button>
+        <button (click)="selectedElements('animal')">Animal</button>
+    </div>
+    <p>{{eventValue}}</p>
+</div>
+<app-component2 [selectedElement]="elementProperty" (sentEventEmitter)="showEventValue($event)"></app-component2>

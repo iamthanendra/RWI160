@@ -1,0 +1,21 @@
+container{
+    padding-top: 40px;
+    display: inline;
+}
+div.row{
+    margin: auto;
+}
+button
+{
+
+    margin-top: 20px;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: cornflowerblue;
+    color: white;
+}
