@@ -1,0 +1,8 @@
+<p>parent works</p>
+<button (click)="toggle()">toggle</button>
+<input type="text" [(ngModel)]="parentValue">
+<div *ngIf="isChild">
+    <app-child [channelName]="parentValue">
+        <h3 #projectedContent>This is Content Projection</h3>
+    </app-child>
+</div>
