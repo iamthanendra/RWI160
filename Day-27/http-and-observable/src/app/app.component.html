@@ -1,0 +1,29 @@
+<div class="container-md container-fluid mt-2">
+  <div class="row " *ngIf="!isLoading">
+
+    <div class="col-sm-4 col-md-3 col-12 mx-auto my-2" *ngFor="let user of users">
+
+      <div class="card" style="@media (min-width: 576px) { max-width: 18rem;}">
+        <img src="{{user.avatar_url}}" loading="lazy" decoding="async" class="card-img-top" alt="..."
+          style="content-visibility: auto; background-color: grey; object-fit: cover; background-image: url({{user.avatar_url}});">
+        <div class="card-body">
+          <h5 class="card-title">{{user.login}}</h5>
+          <p class="card-text">followers : {{user.followers_url.length}}
+            following : {{user.following_url.length}}
+          </p>
+          <button class="btn" style="background-color: #333; color: white;" (click)="goToGithub(user.html_url)"> Open
+            Github</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row h-100" *ngIf="isLoading">
+  <div *ngIf="isLoading" class="col-1 spinner-grow text-dark my-auto mx-auto" role="status">
+    <!-- <span class="sr-only">Loading...</span> -->
+  </div>
+</div>
+</div>
+
+<router-outlet></router-outlet>
