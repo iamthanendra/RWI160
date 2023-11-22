@@ -1,0 +1,25 @@
+.btn-danger:hover{
+    background-color: pink;
+    color: black;
+    outline: 3px solid black;
+}
+btn-primary:hover{
+    background-color: pink !important;
+    color: black !important;
+    outline: 3px solid black !important;
+
+}
+.opacity-visible{
+    opacity: 1 !important;
+}
+.opacity-invisible.ng-untouched{
+    opacity: 0.5 !important;
+}
+input.ng-invalid.ng-touched{
+    outline: 2px solid #dc3545 ;
+    box-shadow: 3px 3px 9px rgba(0, 0, 0, 0.3); 
+}
+small{
+    color: red !important;
+    margin-left: 1vw;
+}
