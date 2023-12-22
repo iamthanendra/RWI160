@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+         <!-- bean definitions here -->
+         
+         <!-- Using Getter and Setter -->
+         <bean class="com.project.practice.springcore.Employee" name="emp">
+			 <property name="id" value="160"/>
+			 <property name="name" value="Thanendra Kashyap" />		 
+		 </bean>
+		 
+		 <!-- Using Constructor -->
+		 <bean class="com.project.practice.springcore.Employee" name="emp1">
+			 <constructor-arg value="161" type="int" index="0" />
+			 <constructor-arg value="Anyone" type="String" index="1"/>
+ 		 </bean>
+ 		 
+ 		 <bean class="com.project.practice.springcore.Address" name="address1">
+			  <property name="streetName" value="mahamayapara"/>
+			  <property name="cityName" value="Jarhagaon" />
+		  </bean>
+ 		 
+ 		 <bean class="com.project.practice.springcore.Employee" name="emp2">
+			 <constructor-arg value="161" type="int" index="0" />
+			 <constructor-arg value="Anyone" type="String" index="1"/>
+			 <!--<constructor-arg  type="Address"  index="2" >
+				 <ref bean="address1" />
+			 </constructor-arg>-->
+			 <constructor-arg type="Address" index="2" ref="address1" /> 
+		  </bean>
+		  
+		  <!--with list and custom class -->
+		  <bean class="com.project.practice.springcore.Employee" name="list_emp1">
+			  <property name="id" value="1600"/>
+			  <property name="name" value="Thanendra" />
+		  </bean>
+		  <bean class="com.project.practice.springcore.Employee" name="list_emp2">
+			  <property name="id" value="1601"/>
+			  <property name="name" value="Thanendra again" />
+		  </bean>
+		  <bean class="com.project.practice.springcore.Employee" name="list_emp3">
+			  <property name="id" value="1602"/>
+			  <property name="name" value="Thanendra Never Dies" />
+		  </bean>
+		  
+		  <bean class="com.project.practice.springcore.EmployeeList" name="emplist">
+			  <constructor-arg >
+				  <list>
+					  <ref bean="list_emp1" />
+					  <ref bean="list_emp2" />
+					  <ref bean="list_emp3" />
+				  </list>
+			  </constructor-arg>
+		  </bean>
+		  
+
+</beans>
