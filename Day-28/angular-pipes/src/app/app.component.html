@@ -1,0 +1,26 @@
+<div style="text-align: center;">
+  <h1>Pipes in Angular</h1><br>
+  <h2><u>Currancy Pipe</u></h2>
+  {{amount | currency}} <br>
+  {{amount | currency: 'INR'}} <br>
+  {{amount | currency: 'EUR'}} <br>
+
+  <h2><u>Case Pipe</u></h2>
+  {{language | lowercase}} <br>
+  {{language | uppercase}} <br>
+  {{language | titlecase}} <br>
+
+  <h2><u>Percent pipe</u></h2>
+  {{marks | percent}} <br>
+
+  <h2><u>Date Pipe</u></h2>
+  {{today }} <br>
+  {{today | date}} <br>
+  {{today | date:'dd-MM-yyyy' }} <br>
+  {{today | date:'dd/MMM/yyyy hh:mm:ss'}}
+
+  <h2><u>Custom Pipe</u></h2>
+  <div class="circle" style="display: flex; justify-content: center; align-items: center;">
+    {{ name | initial}}
+  </div>
+</div>
