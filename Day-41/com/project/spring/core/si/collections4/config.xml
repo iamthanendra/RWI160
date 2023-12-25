@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- bean definitions here -->
+
+
+	<bean class="com.project.spring.core.si.collections4.Questions" name="ques1">
+		<property name="id">
+			<value>160</value>
+		</property>
+		<property name="name">
+			<value>What is Java</value>
+		</property>
+		<property name="answers">
+			<map>
+				<entry key="answer 1" value="Java is Programming Language" />
+				<entry key="answer 2" value="Java is island" />
+			</map>
+		</property>
+	</bean>
+
+</beans>
