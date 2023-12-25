@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        ">
+    <!-- Bean Defination -->
+    <bean class="com.project.spring.core.ci.collections2.Year" name="year1">
+		<constructor-arg value="1991" />
+	</bean>
+    <bean class="com.project.spring.core.ci.collections2.Year" name="year2">
+		<constructor-arg value="1992" />
+	</bean>
+    <bean class="com.project.spring.core.ci.collections2.Year" name="year3">
+		<constructor-arg value="1993" />
+	</bean>
+         
+    
+    <bean class="com.project.spring.core.ci.collections2.Post" name="post1">
+		<constructor-arg value="intern" />
+	</bean>
+    <bean class="com.project.spring.core.ci.collections2.Post" name="post2">
+		<constructor-arg value="Jr. Developer" />
+	</bean>
+    <bean class="com.project.spring.core.ci.collections2.Post" name="post3">
+		<constructor-arg value="Sr. Developer" />
+	</bean>
+	
+	
+    <bean class="com.project.spring.core.ci.collections2.Employee" name="emp1">
+		<constructor-arg  value="121" index="0"/>
+		<constructor-arg  value="XYZ" index="1"/>
+		<constructor-arg index="2">
+			<util:map map-class="java.util.LinkedHashMap">
+				<entry key-ref="year1" value-ref="post1" />
+				<entry key-ref="year2" value-ref="post2" />
+				<entry key-ref="year3" value-ref="post3" />
+			</util:map>
+		</constructor-arg>
+	</bean>
+	
+</beans>
