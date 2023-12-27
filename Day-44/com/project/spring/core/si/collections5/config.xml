@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:util="http://www.springframework.org/schema/util"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util.xsd">
+	<!-- bean definitions here -->
+
+	<bean class="com.project.spring.core.si.collections5.Answer" name="answer1">
+		<property name="id" value="1" />
+		<property name="answer" value="java is programming language" />
+		<property name="postalDate" value="11/12/2023" />
+	</bean>
+	
+	
+	<bean class="com.project.spring.core.si.collections5.Answer" name="answer2">
+		<property name="id" value="2" />
+		<property name="answer" value="java is Object Oriented language" />
+		<property name="postalDate" value="10/12/2023" />
+	</bean>
+	
+	
+	<bean class="com.project.spring.core.si.collections5.User" name="user1">
+		<property name="id" value="1" />
+		<property name="name" value="Thanendra" />
+		<property name="email" value="thanendrakashyap0007@gmail.com" />
+ 	</bean>
+ 	
+	<bean class="com.project.spring.core.si.collections5.User" name="user2">
+		<property name="id" value="2" />
+		<property name="name" value="Thanendra Kashyap" />
+		<property name="email" value="kashyapthanendra@gmail.com" />
+ 	</bean>
+
+	<bean class="com.project.spring.core.si.collections5.Questions" name="ques1">
+		<property name="id">
+			<value>160</value>
+		</property>
+		<property name="name">
+			<value>What is Java</value>
+		</property>
+		<property name="answers">
+			<map>
+				<entry key-ref="answer1" value-ref="user1" />
+				<entry key-ref="answer2" value-ref="user2" />
+			</map>
+		</property>
+	</bean>
+
+</beans>
