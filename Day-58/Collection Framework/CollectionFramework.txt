@@ -1,0 +1,266 @@
+ArrayList
+---------
+new ArrayList<T>(initialSize); //setting initial size
+
+List<T> list = new ArrayList<>();
+ArrayList list = new ArrayList<>();
+
+size  = n + n/2 + 1 OR n * 3/2 + 1
+
+methods are :
+public void add(T element);
+public void add(int index,T element);
+public void addAll(list);
+public T get(index);
+public T remove(index);
+public void remove(T element); // list.remove(Integer.valueOf(10));
+public void clear();
+public void set(int index, T element);
+public boolean contains(T element); //for serching
+
+public int size(); //return size
+
+//Iteration
+for(int i = 0; i < list.size(); i++)
+{
+	System.out.println(list.get(i));
+}
+
+for(T itr: list)
+{
+	System.out.println(itr);
+}
+
+Iterator<T> itr = list.iterator();  //Iterator is interface //one way traverser
+for(itr.hasNext())
+{
+	System.out.println(itr.next());
+}
+
+list.forEach((e)->{
+	System.out.println(e);
+});
+
+ListIterator<T> itr = list.listIterator(list.size());//setting cursor point by default -1
+
+while(itr.hasPrevious())
+{
+	System.out.println(itr.prev());
+}
+--------------------------------------------------------------
+
+LinkedList
+----------
+List<T> list = new LinkedList<>();
+LinkedList<T> list = new LinkedList<>();
+
+methods are :
+public void add(T element);
+public void add(int index,T element);
+public void addAll(list);
+public T get(index);
+public T remove(index);
+public void remove(T element); // list.remove(Integer.valueOf(10));
+public void clear();
+public void set(int index, T element);
+public boolean contains(T element); //for serching
+
+
+
+Stack
+-----
+
+Stack<T> list =  new Stack<>();
+List<T> list =  new Stack<>();
+
+public void push(T element);  
+public T peek();
+public T pop();
+
+
+Queue or LinkedList with Queue
+-------------------------------
+Queue<T> queue = new LinkedList<>();
+
+public boolean offer(T element); //Adding Element at last //return true or false
+public boolean add(T element) throws Exception //return true or throws exception
+
+public T poll(); // removing element from first or null
+public T remove(); // removing element from first or throws exception
+
+public T peek(); // removing element from first or null	
+public T element(); // removing element from first or throws exception
+
+
+ProrityQueue
+------------
+Queue<T> list = new PriorityQueue<>(); 
+ProrityQueue<T> list = new PriorityQueue<>(); //Min-Heap By Default
+ProrityQueue<T> list = new PriorityQueue<>(Comparitor.reverseOrder()); //Max-Heap //java.util.Comparitor
+
+public boolean offer(T element); //Adding Element at last //return true or false
+public boolean add(T element) throws Exception //return true or throws exception
+
+public T poll(); // removing element from first or null
+public T remove(); // removing element from first or throws exception
+
+public T peek(); // removing element from first or null	
+public T element(); // removing element from first or throws exception
+
+Deque or DoubleEndedQueue
+-------------------------
+//Sliding Window Problem
+
+ArrayDeque<T> list = new ArrayDeque<>();
+Deque<T> list = new ArrayDeque<>();
+
+public boolean offer(T element); //Adding Element at last //return true or false
+public void offerLast(T element); ////Adding Element at last //return true or false
+public void offerFirst(T element); ////Adding Element at first //return true or false
+public boolean add(T element) throws Exception //return true or throws exception
+
+public T poll(); // removing element from first or null
+public T pollFirst(); // removing element from first or null
+public T pollLast(); // removing element from Last or null
+public T remove(); // removing element from first or throws exception
+
+public T peek(); // removing element from first or null	
+public T peekFirst(); // removing element from first or null	
+public T peekLast(); // removing element from Last or null	
+public T element(); // removing element from first or throws exception
+
+
+
+HashSet 
+-------
+//Element Order will be not maintained
+Set<T> list = new HashSet<>();
+HashSet<T> list = new HashSet<>();
+
+add();
+remove();
+contains();
+isEmpty();
+size();
+clear();
+
+
+LinkedHashSet 
+-------
+//Element Order will be maintained
+Set<T> list = new LinkedHashSet<>();
+LinkedHashSet<T> list = new LinkedHashSet<>();
+
+add();
+remove();
+contains();
+isEmpty();
+size();
+clear();
+
+TreeSet 
+-------
+//Element Order will be in sorted manner
+Set<T> list = new TreeSet<>();
+TreeSet<T> list = new TreeSet<>();
+
+add();
+remove();
+contains();
+isEmpty();
+size();
+clear();
+
+
+HashMap
+-------
+Map<Key, Value> map = new HashMap<Key,Value>();
+Map<Key, Value> map = new HashMap<Key,Value>();
+
+put(Key, Value); //it may be override value if key is already present while adding
+putIfAbsent(Key, Value); //it won't be override value if key is already present while adding
+
+containsKey(Key);
+containsValue(Value);
+
+remove(key);
+
+isEmpty()
+clear();
+
+
+//Iteration
+for(Map.Entry<Key, Value> e : map.entrySet())
+{
+	System.out.println(e);
+	System.out.println(e.getKey());
+	System.out.println(e.getValue());
+}
+
+for(Key k: map.keySet())
+{
+	System.out.println(k);
+}
+
+for(Key v: map.values())
+{
+	System.out.println(k);
+}
+
+map.forEach((k, v)->{
+	System.out.println(k+" "+v);
+});
+
+TreeMap
+-------
+Map<Key, Value> map = new TreeMap<Key,Value>();
+Map<Key, Value> map = new TreeMap<Key,Value>();
+
+put(Key, Value); //it may be override value if key is already present while adding
+putIfAbsent(Key, Value); //it won't be override value if key is already present while adding
+
+containsKey(Key);
+containsValue(Value);
+
+remove(key);
+
+isEmpty()
+clear();
+
+//Iteration
+for(Map.Entry<Key, Value> e : map.entrySet())
+{
+	System.out.println(e);
+	System.out.println(e.getKey());
+	System.out.println(e.getValue());
+}
+
+for(Key k: map.keySet())
+{
+	System.out.println(k);
+}
+
+for(Key v: map.values())
+{
+	System.out.println(k);
+}
+
+
+java.util.Arrays
+----------------
+Arrays.binarySearch(Element);
+Arrays.sort(array);
+Arrays.fill(element); //fill array with same number
+
+
+java.util.Collections
+---------------------
+Collections.min(list);
+Collections.max(list);
+Collections.frequency(list, element);
+Collections.sort(list); //Assending Order
+Collection.sort(list, Comparator.reverseOrder());
+
+
+
+
