@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: aqua;">
+    <div style="width:300px; height:500px; margin:auto; position: absolute; top:0; bottom:0;right: 0;left:0; background-color: white; border: 2px solid black; border-radius: 5px;">
+        <p id="Que"style="border-bottom:2px solid black; "></p>
+        <div id="optionbox">
+        <label><input type="radio" name="option"><span id="option0">option0</span></label><br>
+        <label><input type="radio" name="option"><span id="option1">option1</span></label><br>
+        <label><input type="radio" name="option"><span id="option2">option2</span></label><br>
+        <label><input type="radio" name="option"><span id="option3">option3</span></label><br>
+        <button onclick="validate_and_update();">Submit</button>
+        </div>
+    </div>
+    <script>
+        const questions = [
+  {
+    "question": "Which of the following data types is not a valid C data type?",
+    "answers": ["int", "float", "char", "string"],
+    "correctAnswer": "string"
+  },
+  {
+    "question": "What is the correct syntax for declaring a pointer variable in C?",
+    "answers": ["int* p", "int p*", "int* p;", "int p*;"],
+    "correctAnswer": "int* p;"
+  },
+  {
+    "question": "What is the difference between a function prototype and a function definition?",
+    "answers": ["A function prototype declares a function without providing its implementation, while a function definition declares and implements a function.", "A function prototype provides the implementation of a function, while a function definition declares a function without providing its implementation.", "A function prototype declares and implements a function, while a function definition declares a function without providing its implementation.", "A function prototype is used to call a function, while a function definition is used to define a function."],
+    "correctAnswer": "A function prototype declares a function without providing its implementation, while a function definition declares and implements a function."
+  },
+  {
+    "question": "What is the purpose of the `malloc()` function in C?",
+    "answers": ["To allocate memory dynamically.", "To deallocate memory dynamically.", "To copy data from one memory location to another.", "To move data from one memory location to another."],
+    "correctAnswer": "To allocate memory dynamically."
+  },
+  {
+    "question": "What is the correct syntax for freeing memory allocated dynamically in C?",
+    "answers": ["free(p)", "delete p", "free(p*)", "delete[] p"],
+    "correctAnswer": "free(p)"
+  }
+];
+    var index = 0;
+    // const questions = JSON.parse(data);
+    document.getElementById("Que").innerHTML = questions[index].question;
+    document.getElementById("option0").innerHTML = questions[index].answers[0];
+    document.getElementById("option1").innerHTML = questions[index].answers[1];
+    document.getElementById("option2").innerHTML = questions[index].answers[2];
+    document.getElementById("option3").innerHTML = questions[index].answers[3];
+
+    document.getElementsByName("option")[0].value = questions[index].answers[0];
+    document.getElementsByName("option")[1].value = questions[index].answers[1];
+    document.getElementsByName("option")[2].value = questions[index].answers[2];
+    document.getElementsByName("option")[3].value = questions[index].answers[3];
+    document.getElementsByName("option")[0].value = questions[index].answers[0];
+
+    //Unchecking
+    document.getElementsByName("option")[0].checked = false;
+    document.getElementsByName("option")[1].checked = false;
+    document.getElementsByName("option")[2].checked = false;
+    document.getElementsByName("option")[3].checked = false;
+
+    var user_points = 0;
+    </script>
+    <script>
+        function clear_checkbox()
+        {
+            let radios = document.getElementsByName("option");
+            for(let radio of radios)
+            {
+                radio.checked = false;
+            }
+        }
+        function validate_and_update()
+        {
+            let values = document.getElementsByName("option");
+            let usr_answer;
+            for(let itr of values)
+            {
+                console.log(itr.checked);
+                if(itr.checked)
+                {
+                    usr_answer = itr.value;
+                    console.log(usr_answer+" == "+questions[index].correctAnswer);
+                    if(usr_answer == questions[index].correctAnswer)
+                    {
+                        alert('Congratulations !! Your Answer is right');
+                        user_points++;
+                        //clearing checkbox
+                        clear_checkbox();
+                        break;
+                    }
+                    else{
+                        alert('OOps !! Your Answer is wrong');
+                        clear_checkbox();
+                    }
+
+                }
+
+            }
+            index++;
+
+            
+            if( index == questions.length)
+            {
+                
+                document.getElementById("Que").innerHTML = "Thank You for Playing";
+                document.getElementById("option0").style.display ="none";
+                document.getElementById("option1").style.display ="none";
+                document.getElementById("option2").style.display ="none";
+                document.getElementById("option3").style.display ="none";
+
+                document.getElementById("optionbox").innerHTML = "Your Point is : <br><b>" + user_points + " / " + questions.length+"</b><br><h3>Refresh page to play again</h3>";
+
+                return false;
+                
+            }
+            if( index < questions.length)
+            {
+            document.getElementById("Que").innerHTML = questions[index].question;
+            document.getElementById("option0").innerHTML = questions[index].answers[0];
+            document.getElementById("option1").innerHTML = questions[index].answers[1];
+            document.getElementById("option2").innerHTML = questions[index].answers[2];
+            document.getElementById("option3").innerHTML = questions[index].answers[3];
+
+            document.getElementsByName("option")[0].value = questions[index].answers[0];
+            document.getElementsByName("option")[1].value = questions[index].answers[1];
+            document.getElementsByName("option")[2].value = questions[index].answers[2];
+            document.getElementsByName("option")[3].value = questions[index].answers[3];
+            }
+
+        }
+    </script>
+
+</body>
+</html>
